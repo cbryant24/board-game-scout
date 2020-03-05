@@ -1,5 +1,3 @@
-require('module-alias/register');
-
 const passport = require('passport');
 const { User } = require('../../../models');
 const LocalStrategy = require('passport-local').Strategy;

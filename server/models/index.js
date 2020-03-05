@@ -2,7 +2,6 @@ const User = require('./user');
 const QuestionChoice = require('./questionChoice');
 const Question = require('./question');
 const UserQuestionChoice = require('./userQuestionChoice');
-const Nedb = require('./nedb');
 
 const models = {
   User,
@@ -21,5 +20,4 @@ module.exports = {
   QuestionChoice,
   Question,
   UserQuestionChoice,
-  Nedb
 };

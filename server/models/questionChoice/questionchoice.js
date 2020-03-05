@@ -1,6 +1,5 @@
 'use strict';
 const dateFormat = require('dateformat');
-const Nedb = require('../nedb');
 const { concat, shuffle } = require('lodash');
 const moment = require('moment');
 

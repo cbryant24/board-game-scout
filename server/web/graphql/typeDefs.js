@@ -3,68 +3,47 @@ const { gql } = require('apollo-server-express');
 //POSSIBLE RENAME QUESTION TO TRIVIA!!
 const typeDefs = gql`
   type Query {
-    dailyTrivia: Question!
     user: User
-    nonGuessedPlayers: [User]
-    guessedPlayers: [User]
-    scores: [User]
-    triviaSolution: QuestionChoiceAnswer
-    correctGuesses: [User]
-    prevMonthWinners: [User]
+    playerPublicInfo: PlayerPublicInfo
   }
 
   type Mutation {
     login(email: String!, password: String!): User!
     logout: User
-    signup(email: String!, password: String!, name: String!): User
-    guess(
-      userId: Int!
-      questionId: Int!
-      questionChoiceId: Int!
-      guess: String!
-    ): UserQuestionChoice
-  }
-
-  # type DailyTrivia {
-  #   question: Question
-  # }
-
-  type Question {
-    id: ID!
-    question: String!
-    is_used: Boolean
-    difficulty: String
-    category: String!
-    triviaChoices: QuestionChoice
-  }
-
-  type QuestionChoice {
-    id: ID!
-    choices: [String!]
-  }
-
-  type QuestionChoiceAnswer {
-    correctChoice: String
-    question: Question
+    signup(email: String!, password: String!, firstName: String!, lastName: String!, phone: Int): User
   }
 
   type User {
     id: ID!
-    name: String!
+    firstName: String!
+    lastName: String!
     email: String!
-    role: String
-    score: Int
-    userQuestionChoices: [UserQuestionChoice]
+    phone: Int
+    favGenre: String
+    aboutMe: String
+
   }
 
-  type UserQuestionChoice {
-    id: ID!
-    userId: Int!
-    questionId: Int!
-    questionChoiceId: Int!
-    guess: String!
-    isCorrect: Boolean!
+  type PlayerPublicInfo {
+    firstName: String!
+    favGenre: String
+    aboutMe: String
   }
+
+  type GameEvent {
+    gameName: String!
+    generalDetails: String!
+    streetAddress: String!
+    city: String!
+    state: String!
+    zip: Int!
+    lat: Int!
+    lng: Int!
+    date: String!
+    time: String!
+  }
+
+
 `;
 
 module.exports = typeDefs;

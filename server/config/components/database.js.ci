@@ -1,0 +1,25 @@
+const database = {
+  production: {
+    database: '',
+    user: '',
+    password: '',
+    dialect: '',
+    host: ''
+  },
+  development: {
+    database: '',
+    user: '',
+    password: '',
+    dialect: '',
+    host: ''
+  },
+  development: {
+    database: '',
+    user: '',
+    password: '',
+    dialect: '',
+    host: ''
+  }
+}
+
+module.exports = database;
